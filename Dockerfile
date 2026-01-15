@@ -4,15 +4,14 @@ FROM nginx:alpine
 RUN rm -rf /usr/share/nginx/html/*
 
 # Copy our landing page
-COPY landing/ /usr/share/nginx/html/
-COPY welcome/ /usr/share/nginx/html/welcome/
+COPY landing/ /usr/share/nginx/html/landing/
 COPY index.html /usr/share/nginx/html/
 
 # Fix permissions for nginx to read files
 RUN chmod -R 755 /usr/share/nginx/html && \
     chown -R nginx:nginx /usr/share/nginx/html
 
-# Add nginx config for SPA-like routing
+# Add nginx config for proper routing
 RUN echo 'server { \
     listen 80; \
     server_name _; \
@@ -20,11 +19,11 @@ RUN echo 'server { \
     index index.html; \
     \
     location / { \
-        try_files $uri $uri/ /index.html; \
+        try_files $uri $uri/ =404; \
     } \
     \
     # Cache static assets \
-    location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2)$ { \
+    location ~* \.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|pdf)$ { \
         expires 7d; \
         add_header Cache-Control "public, immutable"; \
     } \
