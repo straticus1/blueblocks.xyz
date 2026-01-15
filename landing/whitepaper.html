@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueBlocks Technical Whitepaper | Global Health Network</title>
+    <meta name="description" content="BlueBlocks Technical Whitepaper - Reimagining Global Health Infrastructure with blockchain technology, NFT Health IDs, and AI-powered healthcare.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="whitepaper.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="whitepaper-body">
+    <nav class="wp-nav">
+        <a href="/" class="wp-nav-logo">
+            <span class="logo-blue">BLUE</span><span class="logo-blocks">BLOCKS</span>
+        </a>
+        <a href="/" class="wp-nav-back">Back to Home</a>
+    </nav>
+
+    <div class="wp-container">
+        <header class="wp-header">
+            <div class="wp-ascii-logo">
+<pre>
+ ██████╗ ██╗     ██╗   ██╗███████╗██████╗ ██╗      ██████╗  ██████╗██╗  ██╗███████╗
+ ██╔══██╗██║     ██║   ██║██╔════╝██╔══██╗██║     ██╔═══██╗██╔════╝██║ ██╔╝██╔════╝
+ ██████╔╝██║     ██║   ██║█████╗  ██████╔╝██║     ██║   ██║██║     █████╔╝ ███████╗
+ ██╔══██╗██║     ██║   ██║██╔══╝  ██╔══██╗██║     ██║   ██║██║     ██╔═██╗ ╚════██║
+ ██████╔╝███████╗╚██████╔╝███████╗██████╔╝███████╗╚██████╔╝╚██████╗██║  ██╗███████║
+ ╚═════╝ ╚══════╝ ╚═════╝ ╚══════╝╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝╚══════╝
+</pre>
+            </div>
+            <h1>Technical Whitepaper</h1>
+            <p class="wp-subtitle">Reimagining Global Health Infrastructure</p>
+            <p class="wp-tagline">Healthcare Infrastructure, Not Cryptocurrency</p>
+        </header>
+
+        <nav class="wp-toc">
+            <h2>Table of Contents</h2>
+            <ol>
+                <li><a href="#executive-summary">Executive Summary</a></li>
+                <li><a href="#architecture">Network Architecture</a></li>
+                <li><a href="#security">Security & Encryption</a></li>
+                <li><a href="#health-id">NFT-Based Health Identity</a></li>
+                <li><a href="#fhir">FHIR & Healthcare Compliance</a></li>
+                <li><a href="#supply-chain">Supply Chain Verification</a></li>
+                <li><a href="#oracles">Oracle & AI Services</a></li>
+                <li><a href="#smart-contracts">Smart Contracts & dApps</a></li>
+                <li><a href="#payments">Payment & Billing Integration</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+            </ol>
+        </nav>
+
+        <main class="wp-content">
+            <!-- Executive Summary -->
+            <section id="executive-summary" class="wp-section">
+                <h2>Executive Summary</h2>
+
+                <div class="wp-comparison">
+                    <div class="wp-box wp-box-red">
+                        <h3>What BlueBlocks Is NOT</h3>
+                        <ul>
+                            <li>NOT a cryptocurrency for speculation</li>
+                            <li>NOT a get-rich-quick token scheme</li>
+                            <li>NOT competing with Bitcoin or Ethereum as currency</li>
+                            <li>NOT a meme coin or DeFi yield farm</li>
+                        </ul>
+                    </div>
+                    <div class="wp-box wp-box-green">
+                        <h3>What BlueBlocks IS</h3>
+                        <ul>
+                            <li>Healthcare infrastructure on blockchain technology</li>
+                            <li>Patient-owned, sovereign health identity system</li>
+                            <li>Global medicine & agricultural supply chain verification</li>
+                            <li>HIPAA/GDPR compliant decentralized health records</li>
+                            <li>AI-powered health analytics with privacy preservation</li>
+                            <li>Modern replacement for broken health insurance systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wp-revenue-model">
+                    <h3>Revenue Model</h3>
+                    <div class="wp-revenue-grid">
+                        <div class="wp-revenue-card">
+                            <div class="wp-revenue-icon">BBT</div>
+                            <h4>BBT Token</h4>
+                            <p>Governance</p>
+                            <ul>
+                                <li>Validator staking</li>
+                                <li>Network governance</li>
+                                <li>AI compute payment</li>
+                            </ul>
+                        </div>
+                        <div class="wp-revenue-card">
+                            <div class="wp-revenue-icon">NFT</div>
+                            <h4>NFT Health ID</h4>
+                            <p>Patient Identity</p>
+                            <ul>
+                                <li>Portable ID</li>
+                                <li>Medical history link</li>
+                                <li>Emergency access</li>
+                                <li>Insurance claims link</li>
+                            </ul>
+                        </div>
+                        <div class="wp-revenue-card">
+                            <div class="wp-revenue-icon">ENT</div>
+                            <h4>Enterprise Licensing</h4>
+                            <p>B2B Solutions</p>
+                            <ul>
+                                <li>Hospital deployments</li>
+                                <li>Insurance integration</li>
+                                <li>Pharma supply chain</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Network Architecture -->
+            <section id="architecture" class="wp-section">
+                <h2>Network Architecture</h2>
+
+                <div class="wp-diagram">
+                    <h3>Multi-Layer Architecture</h3>
+<pre class="wp-ascii-diagram">
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                          BLUEBLOCKS NETWORK LAYERS                            ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                                                                               ║
+║  ┌─────────────────────────────────────────────────────────────────────────┐  ║
+║  │                        LAYER 3: APPLICATION                              │  ║
+║  │  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐      │  ║
+║  │  │ Patient  │ │ Provider │ │ Insurance│ │  Pharma  │ │ Research │      │  ║
+║  │  │   dApp   │ │  Portal  │ │  Claims  │ │  Track   │ │  Access  │      │  ║
+║  │  └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘ └────┬─────┘      │  ║
+║  └───────┼────────────┼────────────┼────────────┼────────────┼─────────────┘  ║
+║          │            │            │            │            │                ║
+║  ┌───────┴────────────┴────────────┴────────────┴────────────┴─────────────┐  ║
+║  │                        LAYER 2: SIDECHAINS                               │  ║
+║  │                                                                          │  ║
+║  │    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐                │  ║
+║  │    │  HOSPITAL   │◄──►│   SUPPLY    │◄──►│  INSURANCE  │                │  ║
+║  │    │  SIDECHAIN  │    │   CHAIN     │    │   CHAIN     │                │  ║
+║  │    │             │    │             │    │             │                │  ║
+║  │    │ • EHR Data  │    │ • Medicine  │    │ • Claims    │                │  ║
+║  │    │ • Lab Results│   │ • Agriculture│   │ • Billing   │                │  ║
+║  │    │ • Imaging   │    │ • Logistics │    │ • Payments  │                │  ║
+║  │    └──────┬──────┘    └──────┬──────┘    └──────┬──────┘                │  ║
+║  │           └──────────────────┼──────────────────┘  IBC Protocol        │  ║
+║  └──────────────────────────────┼──────────────────────────────────────────┘  ║
+║                                 │                                             ║
+║  ┌──────────────────────────────┴──────────────────────────────────────────┐  ║
+║  │                        LAYER 1: MAINCHAIN                                │  ║
+║  │                                                                          │  ║
+║  │  ┌────────────┐  ┌────────────┐  ┌────────────┐  ┌────────────┐         │  ║
+║  │  │ CONSENSUS  │  │  IDENTITY  │  │   STATE    │  │   ORACLE   │         │  ║
+║  │  │ Tendermint │  │ NFT Health │  │   IAVL+    │  │ AI Compute │         │  ║
+║  │  │    BFT     │  │    IDs     │  │ TimescaleDB│  │  Gateway   │         │  ║
+║  │  └────────────┘  └────────────┘  └────────────┘  └────────────┘         │  ║
+║  └──────────────────────────────────────────────────────────────────────────┘  ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+</pre>
+                </div>
+
+                <div class="wp-node-types">
+                    <h3>Node Types & Distribution</h3>
+                    <div class="wp-node-grid">
+                        <div class="wp-node-card">
+                            <div class="wp-node-percent">33%</div>
+                            <h4>Validator Nodes</h4>
+                            <div class="wp-node-details">
+                                <div>
+                                    <strong>Standard Validator</strong>
+                                    <p>Stake: 100K BBT</p>
+                                    <p>Vote Weight: 1x</p>
+                                </div>
+                                <div>
+                                    <strong>Master Node</strong>
+                                    <p>Stake: 500K BBT</p>
+                                    <p>Oracle Access + API Gateway Key</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wp-node-card">
+                            <div class="wp-node-percent">50%</div>
+                            <h4>Healthcare Nodes</h4>
+                            <div class="wp-node-details">
+                                <div>
+                                    <strong>Hospital Node</strong>
+                                    <p>Stake: 50K BBT</p>
+                                    <p>Vote Weight: 2x, HIPAA Certified</p>
+                                </div>
+                                <div>
+                                    <strong>Clinic Node</strong>
+                                    <p>Stake: 25K BBT</p>
+                                    <p>Regional Focus, PHI Processing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wp-node-card">
+                            <div class="wp-node-percent">17%</div>
+                            <h4>Treasury Nodes</h4>
+                            <div class="wp-node-details">
+                                <div>
+                                    <strong>Treasury Node</strong>
+                                    <p>USDC Reserve</p>
+                                    <p>Claims Pool, Multi-sig</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Security -->
+            <section id="security" class="wp-section">
+                <h2>Security & Encryption</h2>
+
+                <div class="wp-security-stack">
+                    <h3>Cryptographic Stack</h3>
+                    <div class="wp-crypto-grid">
+                        <div class="wp-crypto-card">
+                            <h4>Encryption at Rest</h4>
+                            <div class="wp-crypto-flow">
+                                <div class="wp-crypto-item">
+                                    <span class="wp-crypto-name">AES-256-GCM</span>
+                                    <ul>
+                                        <li>256-bit keys</li>
+                                        <li>Auth tag</li>
+                                        <li>AEAD</li>
+                                    </ul>
+                                </div>
+                                <span class="wp-crypto-arrow">&#10132;</span>
+                                <div class="wp-crypto-item">
+                                    <span class="wp-crypto-name">Argon2id KDF</span>
+                                    <ul>
+                                        <li>64MB RAM</li>
+                                        <li>4 threads</li>
+                                        <li>100K+ iterations</li>
+                                    </ul>
+                                </div>
+                                <span class="wp-crypto-arrow">&#10132;</span>
+                                <div class="wp-crypto-item">
+                                    <span class="wp-crypto-name">Ed25519 Signing</span>
+                                    <ul>
+                                        <li>256-bit curves</li>
+                                        <li>Fast verify</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wp-crypto-card">
+                            <h4>Encryption in Transit</h4>
+                            <div class="wp-crypto-flow">
+                                <div class="wp-crypto-item">
+                                    <span class="wp-crypto-name">TLS 1.3 HTTPS</span>
+                                    <ul>
+                                        <li>Perfect forward secrecy</li>
+                                        <li>HSTS</li>
+                                    </ul>
+                                </div>
+                                <span class="wp-crypto-arrow">&#10132;</span>
+                                <div class="wp-crypto-item">
+                                    <span class="wp-crypto-name">mTLS Node-Node</span>
+                                    <ul>
+                                        <li>Cert pinning</li>
+                                        <li>Validator identity</li>
+                                    </ul>
+                                </div>
+                                <span class="wp-crypto-arrow">&#10132;</span>
+                                <div class="wp-crypto-item">
+                                    <span class="wp-crypto-name">Noise Protocol</span>
+                                    <ul>
+                                        <li>P2P channels</li>
+                                        <li>IBC packets</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wp-zk-section">
+                    <h3>Zero-Knowledge Health Verification</h3>
+                    <div class="wp-zk-comparison">
+                        <div class="wp-zk-box wp-zk-bad">
+                            <h4>Traditional (Reveals PHI)</h4>
+                            <p class="wp-zk-quote">"My blood type is O-negative and I had surgery on March 15, 2024"</p>
+                            <ul>
+                                <li>Exposes exact blood type</li>
+                                <li>Exposes medical history</li>
+                                <li>Exposes dates of care</li>
+                                <li>Exposes provider info</li>
+                            </ul>
+                        </div>
+                        <div class="wp-zk-vs">VS</div>
+                        <div class="wp-zk-box wp-zk-good">
+                            <h4>ZK-Proof (Privacy Preserved)</h4>
+                            <p class="wp-zk-quote">"I can prove I have compatible blood type for this procedure"</p>
+                            <ul>
+                                <li>Proves compatibility</li>
+                                <li>Proves eligibility</li>
+                                <li>Proves consent exists</li>
+                                <li>Reveals NOTHING else</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wp-zk-flow">
+                        <h4>ZK-SNARK Circuit Flow</h4>
+                        <div class="wp-zk-pipeline">
+                            <div class="wp-zk-step">
+                                <span>Patient Data</span>
+                                <small>(encrypted)</small>
+                            </div>
+                            <span class="wp-zk-arrow">&#10132;</span>
+                            <div class="wp-zk-step">
+                                <span>Hash</span>
+                                <small>(private)</small>
+                            </div>
+                            <span class="wp-zk-arrow">&#10132;</span>
+                            <div class="wp-zk-step">
+                                <span>ZK Circuit</span>
+                                <small>(trusted)</small>
+                            </div>
+                            <span class="wp-zk-arrow">&#10132;</span>
+                            <div class="wp-zk-step">
+                                <span>Proof</span>
+                                <small>(public)</small>
+                            </div>
+                            <span class="wp-zk-arrow">&#10132;</span>
+                            <div class="wp-zk-step">
+                                <span>Verifier</span>
+                                <small>(on-chain)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NFT Health ID -->
+            <section id="health-id" class="wp-section">
+                <h2>NFT-Based Health Identity</h2>
+
+                <div class="wp-health-id-card">
+                    <div class="wp-hid-header">
+                        <span class="wp-hid-title">BLUEBLOCKS HEALTH ID #4,521,893</span>
+                        <span class="wp-hid-verified">VERIFIED</span>
+                    </div>
+                    <div class="wp-hid-body">
+                        <div class="wp-hid-info">
+                            <p><strong>Owner:</strong> 0x7f2a8b...c4d5e6</p>
+                            <p><strong>Created:</strong> 2026-01-15</p>
+                        </div>
+                        <div class="wp-hid-records">
+                            <h4>Linked Records</h4>
+                            <ul>
+                                <li>Medical History - QmXyz...abc [12 records]</li>
+                                <li>Prescriptions - QmDef...ghi [3 active]</li>
+                                <li>Lab Results - QmJkl...mno [8 records]</li>
+                                <li>Imaging - QmPqr...stu [2 studies]</li>
+                                <li>Insurance - QmVwx...yz1 [1 policy]</li>
+                            </ul>
+                        </div>
+                        <div class="wp-hid-emergency">
+                            <h4>Emergency Access</h4>
+                            <ul>
+                                <li>Blood Type: O+</li>
+                                <li>Allergies: Penicillin, Shellfish</li>
+                                <li>Conditions: Type 2 Diabetes</li>
+                                <li>Emergency Contact: +1-555-0123</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FHIR Compliance -->
+            <section id="fhir" class="wp-section">
+                <h2>FHIR & Healthcare Compliance</h2>
+
+                <div class="wp-fhir-mapping">
+                    <h3>FHIR R4 Resource Mapping</h3>
+                    <table class="wp-table">
+                        <thead>
+                            <tr>
+                                <th>FHIR Resource</th>
+                                <th>BlueBlocks Storage</th>
+                                <th>Encryption</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Patient</td><td>NFT Health ID</td><td>Ed25519 owned</td></tr>
+                            <tr><td>Observation</td><td>IPFS + Merkle root</td><td>AES-256-GCM</td></tr>
+                            <tr><td>Condition</td><td>IPFS + Merkle root</td><td>AES-256-GCM</td></tr>
+                            <tr><td>MedicationRequest</td><td>Prescription Contract</td><td>Contract state</td></tr>
+                            <tr><td>DiagnosticReport</td><td>IPFS + signed hash</td><td>AES-256-GCM</td></tr>
+                            <tr><td>Immunization</td><td>Supply Chain anchor</td><td>Verified batch</td></tr>
+                            <tr><td>Claim</td><td>Insurance Sidechain</td><td>Multi-party enc</td></tr>
+                            <tr><td>Coverage</td><td>Insurance Contract</td><td>Policy state</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="wp-compliance-matrix">
+                    <h3>Compliance Matrix</h3>
+                    <div class="wp-compliance-grid">
+                        <div class="wp-compliance-card">
+                            <h4>HIPAA</h4>
+                            <ul>
+                                <li>Access controls</li>
+                                <li>Audit logging</li>
+                                <li>Encryption standards</li>
+                                <li>Breach notification</li>
+                            </ul>
+                        </div>
+                        <div class="wp-compliance-card">
+                            <h4>GDPR</h4>
+                            <ul>
+                                <li>Right to erasure</li>
+                                <li>Data portability</li>
+                                <li>Consent management</li>
+                                <li>Privacy by design</li>
+                            </ul>
+                        </div>
+                        <div class="wp-compliance-card">
+                            <h4>SOC 2</h4>
+                            <ul>
+                                <li>Security controls</li>
+                                <li>Availability</li>
+                                <li>Processing integrity</li>
+                                <li>Confidentiality</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Supply Chain -->
+            <section id="supply-chain" class="wp-section">
+                <h2>Supply Chain Verification</h2>
+
+                <div class="wp-supply-flow">
+                    <h3>Medicine & Agriculture Tracking</h3>
+<pre class="wp-ascii-diagram">
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    SUPPLY CHAIN VERIFICATION FLOW                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   MANUFACTURE         DISTRIBUTE          DISPENSE           CONSUME       │
+│   ══════════          ══════════          ════════           ═══════       │
+│                                                                             │
+│   ┌─────────┐        ┌─────────┐        ┌─────────┐        ┌─────────┐    │
+│   │  FARM/  │───────►│LOGISTICS│───────►│PHARMACY │───────►│ PATIENT │    │
+│   │ FACTORY │        │         │        │/RETAILER│        │         │    │
+│   └────┬────┘        └────┬────┘        └────┬────┘        └────┬────┘    │
+│        │                  │                  │                  │          │
+│        ▼                  ▼                  ▼                  ▼          │
+│   ┌─────────┐        ┌─────────┐        ┌─────────┐        ┌─────────┐    │
+│   │ CREATE  │        │ TRANSFER│        │  VERIFY │        │  SCAN   │    │
+│   │   NFT   │        │ CUSTODY │        │  BATCH  │        │ CONSUME │    │
+│   │         │        │         │        │         │        │         │    │
+│   │• Batch# │        │• Chain  │        │• Auth   │        │• Link to│    │
+│   │• Origin │        │• Temp   │        │• Expiry │        │  Health │    │
+│   │• Cert   │        │• GPS    │        │• Recall │        │  ID     │    │
+│   └─────────┘        └─────────┘        └─────────┘        └─────────┘    │
+│                                                                             │
+│                     ALL EVENTS ANCHORED ON SUPPLY CHAIN SIDECHAIN          │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+</pre>
+                </div>
+
+                <div class="wp-counterfeit">
+                    <h3>Anti-Counterfeit Protection</h3>
+                    <div class="wp-counterfeit-grid">
+                        <div class="wp-cf-card">
+                            <h4>Unique Batch NFT</h4>
+                            <p>Every batch minted as unique NFT with manufacturer signature</p>
+                        </div>
+                        <div class="wp-cf-card">
+                            <h4>Custody Chain</h4>
+                            <p>Immutable record of every hand-off in the supply chain</p>
+                        </div>
+                        <div class="wp-cf-card">
+                            <h4>QR Verification</h4>
+                            <p>Consumers scan to verify authenticity before use</p>
+                        </div>
+                        <div class="wp-cf-card">
+                            <h4>Recall System</h4>
+                            <p>Instant notification to all holders of recalled batches</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Oracle & AI -->
+            <section id="oracles" class="wp-section">
+                <h2>Oracle & AI Services</h2>
+
+                <div class="wp-oracle-arch">
+                    <h3>Decentralized Oracle Network</h3>
+<pre class="wp-ascii-diagram">
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║                         ORACLE NETWORK ARCHITECTURE                           ║
+╠═══════════════════════════════════════════════════════════════════════════════╣
+║                                                                               ║
+║   EXTERNAL WORLD                    ORACLE LAYER                  BLOCKCHAIN  ║
+║   ══════════════                    ════════════                  ══════════  ║
+║                                                                               ║
+║   ┌─────────────┐                ┌─────────────┐                             ║
+║   │   PRICE     │───────────────►│   PRICE     │                             ║
+║   │   FEEDS     │                │   ORACLE    │──────┐                      ║
+║   │ (USDC/BBT)  │                │             │      │                      ║
+║   └─────────────┘                └─────────────┘      │                      ║
+║                                                       │     ┌─────────────┐  ║
+║   ┌─────────────┐                ┌─────────────┐      ├────►│   SMART     │  ║
+║   │   HEALTH    │───────────────►│  MEDICAL    │──────┤     │  CONTRACTS  │  ║
+║   │   APIs      │                │   ORACLE    │      │     │             │  ║
+║   │ (Labs, EHR) │                │ NPI, ICD-10 │      │     │ • Claims    │  ║
+║   └─────────────┘                └─────────────┘      │     │ • Identity  │  ║
+║                                                       │     │ • Supply    │  ║
+║   ┌─────────────┐                ┌─────────────┐      │     └─────────────┘  ║
+║   │   AI        │───────────────►│    AI       │──────┘                      ║
+║   │  COMPUTE    │                │   ORACLE    │                             ║
+║   │aiserve.farm │                │ Predictions │                             ║
+║   └─────────────┘                └─────────────┘                             ║
+║                                                                               ║
+║   ┌─────────────────────────────────────────────────────────────────────────┐║
+║   │                    MASTER NODE API GATEWAY                              │║
+║   │                                                                         │║
+║   │  apiproxy.app ──► Auth Key ──► Rate Limit ──► Oracle Request          │║
+║   │                                                                         │║
+║   │  Required: 500K BBT stake for Master Node API access                   │║
+║   └─────────────────────────────────────────────────────────────────────────┘║
+║                                                                               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+</pre>
+                </div>
+
+                <div class="wp-ai-services">
+                    <h3>AI Compute Services</h3>
+                    <div class="wp-ai-grid">
+                        <div class="wp-ai-card">
+                            <h4>Medical Imaging</h4>
+                            <p>AI-powered analysis of X-rays, MRIs, CT scans with privacy-preserving inference</p>
+                        </div>
+                        <div class="wp-ai-card">
+                            <h4>Predictive Analytics</h4>
+                            <p>Disease risk prediction, treatment outcome forecasting, population health trends</p>
+                        </div>
+                        <div class="wp-ai-card">
+                            <h4>Drug Interactions</h4>
+                            <p>Real-time analysis of medication interactions and contraindications</p>
+                        </div>
+                        <div class="wp-ai-card">
+                            <h4>Claims Processing</h4>
+                            <p>Automated claim validation, fraud detection, and eligibility verification</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Smart Contracts -->
+            <section id="smart-contracts" class="wp-section">
+                <h2>Smart Contracts & dApps</h2>
+
+                <div class="wp-vm-support">
+                    <h3>Multi-VM Architecture</h3>
+                    <table class="wp-table">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>VM</th>
+                                <th>Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Starlark</td><td>Native</td><td>Python-like, healthcare builtins</td></tr>
+                            <tr><td>Solidity</td><td>go-ethereum EVM</td><td>EVM compatibility, DeFi</td></tr>
+                            <tr><td>Rust</td><td>wasmtime WASM</td><td>High performance, complex logic</td></tr>
+                            <tr><td>Move</td><td>aptos-move</td><td>Resource-oriented, safety</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="wp-healthcare-precompiles">
+                    <h3>Healthcare Precompiles (EVM)</h3>
+                    <table class="wp-table">
+                        <thead>
+                            <tr>
+                                <th>Address</th>
+                                <th>Function</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0x100</td><td>ValidateNPI</td><td>Verify provider NPI numbers</td></tr>
+                            <tr><td>0x101</td><td>ValidateICD10</td><td>Validate diagnosis codes</td></tr>
+                            <tr><td>0x102</td><td>HIPAAConsent</td><td>Check consent status</td></tr>
+                            <tr><td>0x103</td><td>AuditLog</td><td>Write HIPAA audit entries</td></tr>
+                            <tr><td>0x104</td><td>IPFSUpload</td><td>Store encrypted data</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Payments -->
+            <section id="payments" class="wp-section">
+                <h2>Payment & Billing Integration</h2>
+
+                <div class="wp-payment-flow">
+                    <h3>Multi-Token Payment Rails</h3>
+<pre class="wp-ascii-diagram">
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                         PAYMENT FLOW ARCHITECTURE                           │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│                        ┌─────────────────────┐                              │
+│                        │   PAYMENT REQUEST   │                              │
+│                        │                     │                              │
+│                        │  Amount: $500.00    │                              │
+│                        │  For: Lab Services  │                              │
+│                        └──────────┬──────────┘                              │
+│                                   │                                          │
+│          ┌────────────────────────┼────────────────────────┐                │
+│          │                        │                        │                │
+│          ▼                        ▼                        ▼                │
+│   ┌─────────────┐         ┌─────────────┐         ┌─────────────┐          │
+│   │    USDC     │         │     BBT     │         │   STRIPE    │          │
+│   │  (On-Chain) │         │  (On-Chain) │         │ (Off-Chain) │          │
+│   │             │         │             │         │             │          │
+│   │ • Circle    │         │ • Network   │         │ • Credit    │          │
+│   │ • Instant   │         │   native    │         │ • Invoicing │          │
+│   │ • 1:1 USD   │         │ • Governance│         │ • Anchored  │          │
+│   └──────┬──────┘         └──────┬──────┘         └──────┬──────┘          │
+│          │                       │                       │                  │
+│          └───────────────────────┼───────────────────────┘                  │
+│                                  │                                          │
+│                                  ▼                                          │
+│                        ┌─────────────────────┐                              │
+│                        │  TREASURY CONTRACT  │                              │
+│                        │                     │                              │
+│                        │ • USDC Reserve Pool │                              │
+│                        │ • Claims Settlement │                              │
+│                        │ • Multi-sig 2-of-3  │                              │
+│                        └─────────────────────┘                              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+</pre>
+                </div>
+
+                <div class="wp-insurance-reimagined">
+                    <h3>Insurance Claims: Reimagined</h3>
+                    <div class="wp-insurance-compare">
+                        <div class="wp-ins-old">
+                            <h4>Traditional Insurance</h4>
+                            <div class="wp-ins-timeline">
+                                <div class="wp-ins-step">Day 1: Submit claim</div>
+                                <div class="wp-ins-step">Day 7-14: Initial review</div>
+                                <div class="wp-ins-step">Day 15-30: Additional docs requested</div>
+                                <div class="wp-ins-step">Day 30-60: Adjudication</div>
+                                <div class="wp-ins-step">Day 60-90: Payment issued</div>
+                            </div>
+                            <p class="wp-ins-total">Total: 30-90 days</p>
+                        </div>
+                        <div class="wp-ins-new">
+                            <h4>BlueBlocks Insurance</h4>
+                            <div class="wp-ins-timeline">
+                                <div class="wp-ins-step wp-ins-fast">Hour 0: Submit claim + ZK proof</div>
+                                <div class="wp-ins-step wp-ins-fast">Hour 1: AI validation</div>
+                                <div class="wp-ins-step wp-ins-fast">Hour 2-6: Smart contract adjudication</div>
+                                <div class="wp-ins-step wp-ins-fast">Hour 6-24: USDC settlement</div>
+                            </div>
+                            <p class="wp-ins-total wp-ins-highlight">Total: &lt;24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tokenomics -->
+            <section id="tokenomics" class="wp-section">
+                <h2>Tokenomics</h2>
+
+                <div class="wp-token-dist">
+                    <h3>BBT Token Distribution</h3>
+                    <div class="wp-token-chart">
+                        <div class="wp-token-bar" style="--percent: 40%;">
+                            <span class="wp-token-label">Network Operations</span>
+                            <span class="wp-token-value">40%</span>
+                        </div>
+                        <div class="wp-token-bar" style="--percent: 20%;">
+                            <span class="wp-token-label">Treasury Reserve</span>
+                            <span class="wp-token-value">20%</span>
+                        </div>
+                        <div class="wp-token-bar" style="--percent: 15%;">
+                            <span class="wp-token-label">Team & Advisors</span>
+                            <span class="wp-token-value">15%</span>
+                        </div>
+                        <div class="wp-token-bar" style="--percent: 15%;">
+                            <span class="wp-token-label">Ecosystem Grants</span>
+                            <span class="wp-token-value">15%</span>
+                        </div>
+                        <div class="wp-token-bar" style="--percent: 10%;">
+                            <span class="wp-token-label">Public Sale</span>
+                            <span class="wp-token-value">10%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wp-token-utility">
+                    <h3>Token Utility</h3>
+                    <div class="wp-utility-grid">
+                        <div class="wp-utility-card">
+                            <h4>Validator Staking</h4>
+                            <p>Stake BBT to run validator nodes and earn rewards</p>
+                        </div>
+                        <div class="wp-utility-card">
+                            <h4>Governance</h4>
+                            <p>Vote on protocol upgrades and parameter changes</p>
+                        </div>
+                        <div class="wp-utility-card">
+                            <h4>Gas Fees</h4>
+                            <p>Pay for transaction and contract execution</p>
+                        </div>
+                        <div class="wp-utility-card">
+                            <h4>AI Compute</h4>
+                            <p>Access oracle network and AI services</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Roadmap -->
+            <section id="roadmap" class="wp-section">
+                <h2>Roadmap</h2>
+
+                <div class="wp-roadmap">
+                    <div class="wp-roadmap-item wp-roadmap-complete">
+                        <div class="wp-roadmap-date">Q4 2025</div>
+                        <div class="wp-roadmap-content">
+                            <h4>Foundation</h4>
+                            <ul>
+                                <li>Core blockchain development</li>
+                                <li>Starlark smart contracts</li>
+                                <li>IPFS integration</li>
+                                <li>Security audit (Argon2id, AES-256)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wp-roadmap-item wp-roadmap-current">
+                        <div class="wp-roadmap-date">Q1 2026</div>
+                        <div class="wp-roadmap-content">
+                            <h4>Developer Tools</h4>
+                            <ul>
+                                <li>TypeScript SDK + React hooks</li>
+                                <li>CLI tooling (gas, abi, deploy)</li>
+                                <li>Block indexer + TimescaleDB</li>
+                                <li>Developer portal launch</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wp-roadmap-item">
+                        <div class="wp-roadmap-date">Q2 2026</div>
+                        <div class="wp-roadmap-content">
+                            <h4>Mainnet Launch</h4>
+                            <ul>
+                                <li>February 2, 2026: Mainnet goes live</li>
+                                <li>NFT Health ID minting</li>
+                                <li>Block explorer</li>
+                                <li>First hospital pilot</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wp-roadmap-item">
+                        <div class="wp-roadmap-date">Q3-Q4 2026</div>
+                        <div class="wp-roadmap-content">
+                            <h4>Ecosystem Growth</h4>
+                            <ul>
+                                <li>Supply chain sidechain</li>
+                                <li>Insurance claims integration</li>
+                                <li>Multi-VM support (Solidity, Rust)</li>
+                                <li>Cosmos IBC bridge</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wp-roadmap-item">
+                        <div class="wp-roadmap-date">2027</div>
+                        <div class="wp-roadmap-content">
+                            <h4>Global Expansion</h4>
+                            <ul>
+                                <li>International sidechains</li>
+                                <li>Agricultural supply chain</li>
+                                <li>Research data marketplace</li>
+                                <li>AI oracle network expansion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="wp-footer">
+            <p>&copy; 2026 BlueBlocks. Global Health Network.</p>
+            <p class="wp-footer-sub">Healthcare Infrastructure, Not Cryptocurrency.</p>
+            <a href="/" class="wp-footer-link">Back to Home</a>
+        </footer>
+    </div>
+</body>
+</html>

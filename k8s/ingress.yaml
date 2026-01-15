@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: blueblocks-xyz
+  namespace: consumer-sites
+  labels:
+    app: blueblocks-xyz
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - blueblocks.xyz
+    - www.blueblocks.xyz
+    secretName: blueblocks-xyz-tls
+  rules:
+  - host: blueblocks.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: blueblocks-xyz
+            port:
+              number: 80
+  - host: www.blueblocks.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: blueblocks-xyz
+            port:
+              number: 80
